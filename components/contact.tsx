@@ -148,7 +148,7 @@ export default function Contact() {
               <div className="space-y-4">
                 <div>
                   <h4 className="text-lg font-semibold text-foreground">Karvy Goyel</h4>
-                  <p className="text-muted-foreground">Software Engineer</p>
+                  <p className="text-muted-foreground">DevOps Engineer</p>
                 </div>
                 <div>
                   <p className="text-muted-foreground">karvy1902@gmail.com</p>

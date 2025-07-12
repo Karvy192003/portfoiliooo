@@ -47,13 +47,13 @@ export default function About() {
           >
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                As an MCA student, I am passionate about AI/ML, Java, and DevOps, focusing on building 
-                intelligent, scalable systems. With a strong foundation in software development, data 
-                analytics, and automation, I strive to create efficient solutions that drive technological innovation.
+                As an MCA student, I am passionate about DevOps, automation, and containerization, focusing on building 
+                intelligent, scalable systems. With a strong foundation in CI/CD pipelines, Docker, Jenkins, and cloud 
+                technologies, I strive to create efficient solutions that drive technological innovation.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                My expertise lies in model development, workflow optimization, and seamless AI deployment. 
-                Committed to problem-solving and next-gen technologies, I am eager to collaborate and 
+                My expertise lies in automation, workflow optimization, and seamless container deployment. 
+                Committed to DevOps best practices and next-gen technologies, I am eager to collaborate and 
                 contribute to impactful projects.
               </p>
               <div className="pt-4">

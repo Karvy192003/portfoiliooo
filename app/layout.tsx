@@ -6,8 +6,8 @@ import { ThemeProvider } from '@/components/theme-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Karvy Goyel - Software Engineer',
-  description: 'Passionate software engineer specializing in AI/ML, Java, and DevOps. Building intelligent, scalable systems for the future.',
+  title: 'Karvy Goyel - DevOps Engineer',
+  description: 'Passionate DevOps engineer specializing in CI/CD, containerization, and automation. Building intelligent, scalable systems for the future.',
 };
 
 export default function RootLayout({

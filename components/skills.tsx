@@ -7,28 +7,28 @@ import { Code, Server, Palette, Cloud } from 'lucide-react';
 export default function Skills() {
   const services = [
     {
-      icon: <Code className="h-8 w-8" />,
-      title: 'Web Development',
-      description: 'Building responsive and modern web applications using React, Next.js, and modern frameworks.',
-      skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS']
+      icon: <Cloud className="h-8 w-8" />,
+      title: 'CI/CD & Automation',
+      description: 'Building automated pipelines for continuous integration and deployment with modern DevOps tools.',
+      skills: ['Jenkins', 'Git/GitHub', 'Docker', 'Linux']
     },
     {
       icon: <Server className="h-8 w-8" />,
-      title: 'Backend API Integration',
-      description: 'Developing robust backend systems and APIs with Java, Python, and database integration.',
-      skills: ['Java', 'Python', 'REST APIs', 'Database Design']
+      title: 'Containerization',
+      description: 'Developing containerized applications and orchestration with Docker and Kubernetes.',
+      skills: ['Docker', 'Kubernetes', 'Container Registry', 'Microservices']
+    },
+    {
+      icon: <Code className="h-8 w-8" />,
+      title: 'Automation & Scripting',
+      description: 'Creating automation scripts and tools for infrastructure management and deployment.',
+      skills: ['Python', 'Bash', 'Streamlit', 'Process Automation']
     },
     {
       icon: <Palette className="h-8 w-8" />,
-      title: 'UI/UX Design',
-      description: 'Creating beautiful and intuitive user interfaces with focus on user experience.',
-      skills: ['Figma', 'Design Systems', 'Responsive Design', 'Prototyping']
-    },
-    {
-      icon: <Cloud className="h-8 w-8" />,
-      title: 'Cloud & DevOps',
-      description: 'Implementing CI/CD pipelines, containerization, and cloud deployment strategies.',
-      skills: ['Docker', 'Kubernetes', 'Jenkins', 'AWS/Azure']
+      title: 'AI/ML Integration',
+      description: 'Integrating AI/ML models into production systems with proper deployment and monitoring.',
+      skills: ['Python', 'Gemini API', 'LangChain', 'Model Deployment']
     }
   ];
 

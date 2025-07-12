@@ -9,52 +9,60 @@ import { ExternalLink, Github } from 'lucide-react';
 export default function Projects() {
   const projects = [
     {
-      title: 'AI-Powered Task Manager',
-      description: 'Smart task management system with AI-driven priority suggestions and automated scheduling.',
-      tech: ['React', 'Python', 'TensorFlow', 'FastAPI'],
-      liveDemo: 'https://ai-task-manager.vercel.app',
-      github: 'https://github.com/karvy/ai-task-manager',
-      image: '🤖'
+      title: 'CI/CD Pipeline Automation',
+      description: 'Complete DevOps pipeline automating code commits to container deployment with Git, Jenkins, and Docker.',
+      tech: ['Git', 'GitHub', 'Jenkins', 'Docker', 'Linux'],
+      liveDemo: 'https://github.com/karvy/cicd-pipeline',
+      github: 'https://github.com/karvy/cicd-pipeline',
+      image: '🔄'
     },
     {
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with payment integration and inventory management.',
-      tech: ['Next.js', 'Node.js', 'MongoDB', 'Stripe'],
-      liveDemo: 'https://ecommerce-platform.vercel.app',
-      github: 'https://github.com/karvy/ecommerce-platform',
-      image: '🛍️'
+      title: 'Docker Management UI',
+      description: 'Streamlit-based interface for managing Docker operations with easy-to-use web UI for container management.',
+      tech: ['Python', 'Streamlit', 'Docker', 'Subprocess'],
+      liveDemo: 'https://docker-ui.streamlit.app',
+      github: 'https://github.com/karvy/docker-management-ui',
+      image: '🐳'
     },
     {
-      title: 'DevOps Dashboard',
-      description: 'Comprehensive monitoring dashboard for CI/CD pipelines and infrastructure metrics.',
-      tech: ['React', 'Docker', 'Kubernetes', 'Jenkins'],
-      liveDemo: 'https://devops-dashboard.vercel.app',
-      github: 'https://github.com/karvy/devops-dashboard',
-      image: '📊'
+      title: 'PropGuard AI - Rental Scam Detector',
+      description: 'GenAI-powered Streamlit app using Gemini and LangChain to detect rental scams and validate property listings.',
+      tech: ['Python', 'Streamlit', 'Gemini', 'LangChain', 'Plotly'],
+      liveDemo: 'https://propguard-ai.streamlit.app',
+      github: 'https://github.com/karvy/propguard-ai',
+      image: '🏠'
     },
     {
-      title: 'Social Media Analytics',
-      description: 'Data analytics platform for social media insights with real-time visualization.',
-      tech: ['Python', 'Pandas', 'D3.js', 'PostgreSQL'],
-      liveDemo: 'https://social-analytics.vercel.app',
-      github: 'https://github.com/karvy/social-analytics',
-      image: '📱'
+      title: 'MindBloom - AI Therapy Assistant',
+      description: 'AI-powered emotional support companion using Flask, SQLite, and Gemini API for therapeutic conversations.',
+      tech: ['Python', 'Flask', 'Gemini API', 'SQLite', 'Bootstrap'],
+      liveDemo: 'https://mindbloom-therapy.herokuapp.com',
+      github: 'https://github.com/karvy/mindbloom-ai',
+      image: '🌿'
     },
     {
-      title: 'Weather Prediction App',
-      description: 'Machine learning-based weather prediction system with interactive maps.',
-      tech: ['Python', 'Scikit-learn', 'React', 'OpenWeatherAPI'],
-      liveDemo: 'https://weather-prediction.vercel.app',
-      github: 'https://github.com/karvy/weather-prediction',
-      image: '🌤️'
+      title: 'NeoToolkit - Smart Productivity Suite',
+      description: 'All-in-one desktop application for WhatsApp messaging, emailing, maps, and media capture with dark UI.',
+      tech: ['Python', 'Streamlit', 'OpenCV', 'Folium', 'pywhatkit'],
+      liveDemo: 'https://neotoolkit.streamlit.app',
+      github: 'https://github.com/karvy/neotoolkit',
+      image: '🚀'
     },
     {
-      title: 'Blockchain Voting System',
-      description: 'Secure voting platform built on blockchain technology with smart contracts.',
-      tech: ['Solidity', 'Web3.js', 'React', 'Ethereum'],
-      liveDemo: 'https://blockchain-voting.vercel.app',
-      github: 'https://github.com/karvy/blockchain-voting',
-      image: '🗳️'
+      title: 'Diamond Estimator ML',
+      description: 'Machine learning model predicting diamond prices based on Carat, Cut, and Clarity with Streamlit interface.',
+      tech: ['Python', 'Streamlit', 'Scikit-learn', 'Pandas'],
+      liveDemo: 'https://diamond-estimator.streamlit.app',
+      github: 'https://github.com/karvy/diamond-estimator',
+      image: '💎'
+    },
+    {
+      title: 'TextSync - Real-Time Text Reflector',
+      description: 'Interactive mini web project with live text reflection, HTML rendering, and beautiful glassmorphism design.',
+      tech: ['HTML', 'CSS', 'JavaScript', 'DOM Manipulation'],
+      liveDemo: 'https://karvy.github.io/textsync',
+      github: 'https://github.com/karvy/textsync',
+      image: '✨'
     }
   ];
 

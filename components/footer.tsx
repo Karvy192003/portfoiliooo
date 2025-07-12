@@ -22,7 +22,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold text-foreground mb-4">Karvy Goyel</h3>
             <p className="text-muted-foreground max-w-md">
-              Passionate software engineer building intelligent, scalable systems for the future.
+              Passionate DevOps engineer building intelligent, scalable systems for the future.
             </p>
           </div>
           

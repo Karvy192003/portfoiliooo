@@ -66,11 +66,11 @@ export default function Hero() {
               👋
             </h1>
             <h2 className="text-xl md:text-2xl text-muted-foreground mb-4">
-              A Passionate Software Engineer
+              A Passionate DevOps Engineer
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl">
-              I design and build modern web applications with beautiful UI and powerful backend. 
-              Specializing in AI/ML, Java, and DevOps to create intelligent, scalable systems.
+              I design and build automated CI/CD pipelines with containerization and cloud deployment. 
+              Specializing in Docker, Jenkins, and automation to create intelligent, scalable systems.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.button
