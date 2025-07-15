@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github, Star, GitBranch } from 'lucide-react';
+import { Github, Star, GitBranch } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Projects() {
   const projects = [
@@ -12,7 +13,6 @@ export default function Projects() {
       title: 'CI/CD Pipeline Automation',
       description: 'Complete DevOps pipeline automating code commits to container deployment with Git, Jenkins, and Docker.',
       tech: ['Git', 'GitHub', 'Jenkins', 'Docker', 'Linux'],
-      liveDemo: 'https://github.com/Karvy192003/cicd-pipeline',
       github: 'https://github.com/Karvy192003/cicd-pipeline',
       image: '🔄',
       category: 'DevOps',
@@ -22,8 +22,7 @@ export default function Projects() {
       title: 'Docker Management UI',
       description: 'Streamlit-based interface for managing Docker operations with easy-to-use web UI for container management.',
       tech: ['Python', 'Streamlit', 'Docker', 'Subprocess'],
-      liveDemo: 'https://docker-ui.streamlit.app',
-      github: 'https://github.com/Karvy192003/docker-management-ui',
+      github: 'https://github.com/Karvy192003/Docker_streamlit.git',
       image: '🐳',
       category: 'DevOps',
       featured: true
@@ -32,8 +31,7 @@ export default function Projects() {
       title: 'PropGuard AI - Rental Scam Detector',
       description: 'GenAI-powered Streamlit app using Gemini and LangChain to detect rental scams and validate property listings.',
       tech: ['Python', 'Streamlit', 'Gemini', 'LangChain', 'Plotly'],
-      liveDemo: 'https://propguard-ai.streamlit.app',
-      github: 'https://github.com/Karvy192003/propguard-ai',
+      github: 'https://github.com/Karvy192003/Langproject.git',
       image: '🏠',
       category: 'AI/ML',
       featured: true
@@ -42,8 +40,7 @@ export default function Projects() {
       title: 'MindBloom - AI Therapy Assistant',
       description: 'AI-powered emotional support companion using Flask, SQLite, and Gemini API for therapeutic conversations.',
       tech: ['Python', 'Flask', 'Gemini API', 'SQLite', 'Bootstrap'],
-      liveDemo: 'https://mindbloom-therapy.herokuapp.com',
-      github: 'https://github.com/Karvy192003/mindbloom-ai',
+      github: 'https://github.com/Karvy192003/aitherapist.git',
       image: '🌿',
       category: 'AI/ML',
       featured: false
@@ -52,28 +49,61 @@ export default function Projects() {
       title: 'NeoToolkit - Smart Productivity Suite',
       description: 'All-in-one desktop application for WhatsApp messaging, emailing, maps, and media capture with dark UI.',
       tech: ['Python', 'Streamlit', 'OpenCV', 'Folium', 'pywhatkit'],
-      liveDemo: 'https://neotoolkit.streamlit.app',
-      github: 'https://github.com/Karvy192003/neotoolkit',
+      github: 'https://github.com/Karvy192003/Pythonmenu.git',
       image: '🚀',
       category: 'Full Stack',
       featured: false
     },
     {
-      title: 'Diamond Estimator ML',
-      description: 'Machine learning model predicting diamond prices based on Carat, Cut, and Clarity with Streamlit interface.',
-      tech: ['Python', 'Streamlit', 'Scikit-learn', 'Pandas'],
-      liveDemo: 'https://diamond-estimator.streamlit.app',
-      github: 'https://github.com/Karvy192003/diamond-estimator',
-      image: '💎',
+      title: 'Solitaire Predictor',
+      description: 'Machine learning model for predicting Solitaire game outcomes with advanced algorithms and data analysis.',
+      tech: ['Python', 'Machine Learning', 'Data Analysis', 'Prediction'],
+      github: 'https://github.com/Karvy192003/Solitairepredict.git',
+      image: '🃏',
       category: 'AI/ML',
+      featured: false
+    },
+    {
+      title: 'Linux Management UI',
+      description: 'Streamlit-based web interface for Linux system management with intuitive controls and monitoring.',
+      tech: ['Python', 'Streamlit', 'Linux', 'System Administration'],
+      github: 'https://github.com/Karvy192003/Linux-streamlit.git',
+      image: '🐧',
+      category: 'DevOps',
+      featured: false
+    },
+    {
+      title: 'Wikipedia Chatbot AI',
+      description: 'Intelligent chatbot that scrapes Wikipedia data using BeautifulSoup for interactive knowledge queries.',
+      tech: ['Python', 'BeautifulSoup', 'Web Scraping', 'AI Chatbot'],
+      github: 'https://github.com/Karvy192003/Beautifulsoup.git',
+      image: '📚',
+      category: 'AI/ML',
+      featured: false
+    },
+    {
+      title: 'Mobile JS Functionality',
+      description: 'Interactive mobile web application with JavaScript onclick functionality and responsive design.',
+      tech: ['JavaScript', 'HTML', 'CSS', 'Mobile Development'],
+      github: 'https://github.com/Karvy192003/JSonclick.git',
+      image: '📱',
+      category: 'Frontend',
+      featured: false
+    },
+    {
+      title: 'AWS Automation Container Launch',
+      description: 'Automated AWS container deployment system with infrastructure as code and scalable architecture.',
+      tech: ['AWS', 'Docker', 'Automation', 'Infrastructure'],
+      github: 'https://github.com/Karvy192003/awscontainer.git',
+      image: '☁️',
+      category: 'DevOps',
       featured: false
     },
     {
       title: 'TextSync - Real-Time Text Reflector',
       description: 'Interactive mini web project with live text reflection, HTML rendering, and beautiful glassmorphism design.',
       tech: ['HTML', 'CSS', 'JavaScript', 'DOM Manipulation'],
-      liveDemo: 'https://karvy192003.github.io/textsync',
-      github: 'https://github.com/Karvy192003/textsync',
+      github: 'https://github.com/Karvy192003/Textsync.git',
       image: '✨',
       category: 'Frontend',
       featured: false
@@ -170,24 +200,14 @@ export default function Projects() {
                         </Badge>
                       ))}
                     </div>
-                    <div className="flex gap-2 pt-4">
-                      <Button
-                        variant="default"
-                        size="sm"
-                        className="flex-1 bg-primary hover:bg-primary/90"
-                        onClick={() => window.open(project.liveDemo, '_blank')}
-                      >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Live Demo
-                      </Button>
+                    <div className="flex justify-center pt-4">
                       <Button
                         variant="outline"
-                        size="sm"
-                        className="flex-1 border-primary/30 hover:bg-primary hover:text-primary-foreground"
+                        className="border-primary/30 hover:bg-primary hover:text-primary-foreground px-6"
                         onClick={() => window.open(project.github, '_blank')}
                       >
                         <Github className="h-4 w-4 mr-2" />
-                        Code
+                        Show Code
                       </Button>
                     </div>
                   </CardContent>
@@ -246,24 +266,15 @@ export default function Projects() {
                         </Badge>
                       )}
                     </div>
-                    <div className="flex gap-2 pt-2">
+                    <div className="flex justify-center pt-2">
                       <Button
                         variant="outline"
                         size="sm"
-                        className="flex-1 text-xs border-primary/30 hover:bg-primary hover:text-primary-foreground"
-                        onClick={() => window.open(project.liveDemo, '_blank')}
-                      >
-                        <ExternalLink className="h-3 w-3 mr-1" />
-                        Demo
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="flex-1 text-xs border-primary/30 hover:bg-primary hover:text-primary-foreground"
+                        className="text-xs border-primary/30 hover:bg-primary hover:text-primary-foreground px-4"
                         onClick={() => window.open(project.github, '_blank')}
                       >
                         <Github className="h-3 w-3 mr-1" />
-                        Code
+                        Show Code
                       </Button>
                     </div>
                   </CardContent>
@@ -297,6 +308,3 @@ export default function Projects() {
     </section>
   );
 }
-
-// Add useState import at the top
-import { useState } from 'react';
