@@ -161,7 +161,6 @@ export default function Skills() {
           <div className="flex space-x-2 bg-secondary/20 p-2 rounded-xl">
             {[
               { id: 'overview', label: 'Overview', icon: <Layers className="h-4 w-4" /> },
-              { id: '3d', label: '3D Skills', icon: <Cpu className="h-4 w-4" /> },
               { id: 'detailed', label: 'Detailed', icon: <Database className="h-4 w-4" /> }
             ].map((tab) => (
               <button
@@ -238,21 +237,6 @@ export default function Skills() {
               </motion.div>
             ))}
           </div>
-        )}
-
-        {activeTab === '3d' && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-background to-secondary/10 rounded-3xl p-8 border border-border/50"
-          >
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Interactive 3D Skills Visualization</h3>
-              <p className="text-muted-foreground">Click on any skill sphere to see detailed proficiency levels</p>
-            </div>
-            <Skills3D />
-          </motion.div>
         )}
 
         {activeTab === 'detailed' && (
