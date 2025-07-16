@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { GraduationCap, Award, Target, Heart } from 'lucide-react';
-import TechStack3D from './TechStack3D';
 
 export default function About() {
   const techStack = [
@@ -167,7 +166,7 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* Tech Stack */}
+        {/* Tech Stack with 3D Animations */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -187,109 +186,122 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 whileHover={{ 
-                  scale: 1.15, 
-                  y: -10,
-                  rotateY: 15,
-                  rotateX: 10,
+                  scale: 1.2,
+                  rotateY: 180,
+                  rotateX: 15,
                   z: 50
                 }}
-                className="group"
-                style={{ transformStyle: 'preserve-3d' }}
+                className="group perspective-1000"
+                style={{ 
+                  transformStyle: 'preserve-3d',
+                  perspective: '1000px'
+                }}
               >
-                <Card className="relative card-hover border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden bg-gradient-to-br from-background via-background to-secondary/20">
-                  {/* Animated background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Card className="relative card-hover border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden bg-gradient-to-br from-background via-background to-secondary/20 transform-gpu">
+                  {/* Animated background glow */}
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    animate={{
+                      background: [
+                        'linear-gradient(45deg, rgba(59, 130, 246, 0.1), transparent, rgba(147, 51, 234, 0.1))',
+                        'linear-gradient(135deg, rgba(147, 51, 234, 0.1), transparent, rgba(59, 130, 246, 0.1))',
+                        'linear-gradient(225deg, rgba(59, 130, 246, 0.1), transparent, rgba(147, 51, 234, 0.1))',
+                        'linear-gradient(315deg, rgba(147, 51, 234, 0.1), transparent, rgba(59, 130, 246, 0.1))',
+                      ]
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                  />
                   
                   {/* Floating particles */}
                   <div className="absolute inset-0 overflow-hidden">
-                    {[...Array(3)].map((_, i) => (
+                    {[...Array(4)].map((_, i) => (
                       <motion.div
                         key={i}
-                        className="absolute w-1 h-1 bg-primary/30 rounded-full"
+                        className="absolute w-1 h-1 bg-primary/40 rounded-full"
                         style={{
-                          left: `${20 + i * 30}%`,
+                          left: `${15 + i * 25}%`,
                           top: `${20 + i * 20}%`,
                         }}
                         animate={{
-                          y: [0, -15, 0],
-                          x: [0, 5, 0, -5, 0],
-                          opacity: [0.3, 0.9, 0.3],
-                          scale: [1, 1.5, 1],
-                          rotateZ: [0, 180, 360],
+                          y: [0, -20, 0],
+                          x: [0, 10, 0, -10, 0],
+                          opacity: [0.2, 1, 0.2],
+                          scale: [1, 2, 1],
+                          rotate: [0, 360],
                         }}
                         transition={{
-                          duration: 3 + i * 0.7,
+                          duration: 3 + i * 0.5,
                           repeat: Infinity,
-                          delay: i * 0.3,
+                          delay: i * 0.2,
                           ease: "easeInOut"
                         }}
                       />
                     ))}
                   </div>
                   
-                  <CardContent className="relative p-8 text-center">
+                  <CardContent className="relative p-6 text-center">
+                    {/* 3D Spinning Icon */}
                     <motion.div 
-                      className="text-5xl mb-4 group-hover:scale-150 transition-transform duration-500 relative"
-                      style={{ transformStyle: 'preserve-3d' }}
+                      className="text-4xl mb-4 relative"
                       animate={{
-                        rotateY: [0, 360, 720],
-                        rotateX: [0, 180, 360],
-                        rotateZ: [0, 90, 180, 270, 360],
-                        scale: [1, 1.1, 1, 0.9, 1],
+                        rotateY: [0, 360],
+                        rotateX: [0, 15, 0, -15, 0],
+                        rotateZ: [0, 5, 0, -5, 0],
+                        scale: [1, 1.1, 1, 0.95, 1],
                       }}
                       transition={{
-                        duration: 12 + index * 0.8,
+                        duration: 8 + index * 0.5,
                         repeat: Infinity,
                         ease: "easeInOut",
                         delay: index * 0.2
                       }}
                       whileHover={{
-                        rotateY: [0, 360],
-                        rotateX: [0, 180],
+                        rotateY: [0, 720],
+                        rotateX: [0, 360],
                         scale: 1.5,
                         transition: { 
-                          duration: 0.8,
+                          duration: 1,
                           type: "spring",
                           stiffness: 200
                         }
                       }}
+                      style={{ transformStyle: 'preserve-3d' }}
                     >
-                      {/* 3D shadow effect */}
-                      <div className="absolute inset-0 text-5xl opacity-20 transform translate-x-1 translate-y-1 translate-z-[-5px] blur-sm">
+                      {/* 3D depth layers */}
+                      <div className="absolute inset-0 text-4xl opacity-30 transform translate-x-0.5 translate-y-0.5 blur-sm">
                         {tech.icon}
                       </div>
-                      <div className="absolute inset-0 text-5xl opacity-10 transform translate-x-2 translate-y-2 translate-z-[-10px] blur-md">
+                      <div className="absolute inset-0 text-4xl opacity-15 transform translate-x-1 translate-y-1 blur-md">
                         {tech.icon}
                       </div>
-                      {tech.icon}
+                      <div className="relative z-10">
+                        {tech.icon}
+                      </div>
                     </motion.div>
                     
-                    {/* Glowing ring */}
+                    {/* Rotating border rings */}
                     <motion.div
-                      className="absolute inset-0 rounded-lg border-2 border-primary/0 group-hover:border-primary/70"
-                      style={{ transformStyle: 'preserve-3d' }}
+                      className="absolute inset-0 rounded-lg border-2 border-primary/0 group-hover:border-primary/50"
                       animate={{
-                        rotateY: [0, 360],
-                        rotateZ: [0, -360],
-                        boxShadow: [
-                          "0 0 0 0 rgba(59, 130, 246, 0)",
-                          "0 0 0 8px rgba(59, 130, 246, 0.2)",
-                          "0 0 20px 4px rgba(59, 130, 246, 0.3)",
-                          "0 0 0 0 rgba(59, 130, 246, 0)",
+                        rotate: [0, 360],
+                        borderColor: [
+                          'rgba(59, 130, 246, 0)',
+                          'rgba(59, 130, 246, 0.3)',
+                          'rgba(147, 51, 234, 0.3)',
+                          'rgba(59, 130, 246, 0)',
                         ],
                       }}
                       transition={{
-                        rotateY: { 
+                        rotate: { 
                           duration: 10 + index * 0.5, 
                           repeat: Infinity, 
                           ease: "linear" 
                         },
-                        rotateZ: { 
-                          duration: 8 + index * 0.3, 
-                          repeat: Infinity, 
-                          ease: "linear" 
-                        },
-                        boxShadow: {
+                        borderColor: {
                           duration: 3,
                           repeat: Infinity,
                           ease: "easeInOut"
@@ -297,54 +309,74 @@ export default function About() {
                       }}
                     />
                     
-                    {/* Additional rotating rings */}
+                    {/* Inner rotating ring */}
                     <motion.div
                       className="absolute inset-2 rounded-lg border border-accent/30"
                       animate={{
-                        rotateX: [0, 360],
-                        rotateZ: [0, 180],
+                        rotate: [0, -360],
+                        scale: [1, 1.05, 1],
                       }}
                       transition={{
-                        duration: 6 + index * 0.4,
+                        rotate: {
+                          duration: 6 + index * 0.3,
+                          repeat: Infinity,
+                          ease: "linear",
+                          delay: index * 0.1
+                        },
+                        scale: {
+                          duration: 4,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }
+                      }}
+                    />
+                    
+                    {/* Pulsing glow effect */}
+                    <motion.div
+                      className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary/5 to-accent/5"
+                      animate={{
+                        opacity: [0, 0.5, 0],
+                        scale: [1, 1.1, 1],
+                      }}
+                      transition={{
+                        duration: 2 + index * 0.2,
                         repeat: Infinity,
-                        ease: "linear",
+                        ease: "easeInOut",
                         delay: index * 0.1
                       }}
                     />
                     
+                    {/* Animated Badge */}
                     <motion.div
-                      className="absolute inset-4 rounded-lg border border-secondary/40"
                       animate={{
-                        rotateY: [0, -360],
-                        rotateX: [0, 180],
+                        y: [0, -2, 0],
                       }}
                       transition={{
-                        duration: 9 + index * 0.6,
+                        duration: 2 + index * 0.1,
                         repeat: Infinity,
-                        ease: "linear",
-                        delay: index * 0.15
+                        ease: "easeInOut",
+                        delay: index * 0.05
                       }}
-                    />
-                    
-                    <Badge 
-                      variant="secondary" 
-                      className={`${tech.color} font-semibold text-sm px-4 py-2 rounded-full shadow-lg group-hover:shadow-2xl transition-all duration-500 relative z-10`}
-                      style={{ transformStyle: 'preserve-3d' }}
                     >
-                      <motion.span
-                        animate={{
-                          rotateX: [0, 5, 0, -5, 0],
-                        }}
-                        transition={{
-                          duration: 4 + index * 0.2,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          delay: index * 0.1
-                        }}
+                      <Badge 
+                        variant="secondary" 
+                        className={`${tech.color} font-semibold text-xs px-3 py-1 rounded-full shadow-lg group-hover:shadow-xl transition-all duration-500 relative z-10`}
                       >
-                        {tech.name}
-                      </motion.span>
-                    </Badge>
+                        <motion.span
+                          animate={{
+                            scale: [1, 1.05, 1],
+                          }}
+                          transition={{
+                            duration: 3 + index * 0.1,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: index * 0.05
+                          }}
+                        >
+                          {tech.name}
+                        </motion.span>
+                      </Badge>
+                    </motion.div>
                   </CardContent>
                 </Card>
               </motion.div>
