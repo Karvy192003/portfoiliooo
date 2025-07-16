@@ -31,6 +31,11 @@ export default function Contact() {
   };
 
   const contactInfo = [
+    {
+      icon: <Phone className="h-6 w-6" />,
+      title: 'Phone',
+      value: '+91 8700654321',
+      href: 'tel:+918700654321',
       color: 'from-blue-500 to-cyan-500'
     },
     {
