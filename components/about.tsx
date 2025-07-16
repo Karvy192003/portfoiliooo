@@ -211,13 +211,17 @@ export default function About() {
                           top: `${20 + i * 20}%`,
                         }}
                         animate={{
-                          y: [0, -10, 0],
-                          opacity: [0.3, 0.8, 0.3],
+                          y: [0, -15, 0],
+                          x: [0, 5, 0, -5, 0],
+                          opacity: [0.3, 0.9, 0.3],
+                          scale: [1, 1.5, 1],
+                          rotateZ: [0, 180, 360],
                         }}
                         transition={{
-                          duration: 2 + i * 0.5,
+                          duration: 3 + i * 0.7,
                           repeat: Infinity,
                           delay: i * 0.3,
+                          ease: "easeInOut"
                         }}
                       />
                     ))}
@@ -225,44 +229,121 @@ export default function About() {
                   
                   <CardContent className="relative p-8 text-center">
                     <motion.div 
-                      className="text-5xl mb-4 group-hover:scale-125 transition-transform duration-500"
+                      className="text-5xl mb-4 group-hover:scale-150 transition-transform duration-500 relative"
+                      style={{ transformStyle: 'preserve-3d' }}
                       animate={{
-                        rotateY: [0, 360],
+                        rotateY: [0, 360, 720],
+                        rotateX: [0, 180, 360],
+                        rotateZ: [0, 90, 180, 270, 360],
+                        scale: [1, 1.1, 1, 0.9, 1],
                       }}
                       transition={{
-                        duration: 8,
+                        duration: 12 + index * 0.8,
                         repeat: Infinity,
-                        ease: "linear",
+                        ease: "easeInOut",
+                        delay: index * 0.2
                       }}
                       whileHover={{
-                        rotateY: [0, 180],
-                        transition: { duration: 0.6 }
+                        rotateY: [0, 360],
+                        rotateX: [0, 180],
+                        scale: 1.5,
+                        transition: { 
+                          duration: 0.8,
+                          type: "spring",
+                          stiffness: 200
+                        }
                       }}
                     >
+                      {/* 3D shadow effect */}
+                      <div className="absolute inset-0 text-5xl opacity-20 transform translate-x-1 translate-y-1 translate-z-[-5px] blur-sm">
+                        {tech.icon}
+                      </div>
+                      <div className="absolute inset-0 text-5xl opacity-10 transform translate-x-2 translate-y-2 translate-z-[-10px] blur-md">
+                        {tech.icon}
+                      </div>
                       {tech.icon}
                     </motion.div>
                     
                     {/* Glowing ring */}
                     <motion.div
-                      className="absolute inset-0 rounded-lg border-2 border-primary/0 group-hover:border-primary/50"
+                      className="absolute inset-0 rounded-lg border-2 border-primary/0 group-hover:border-primary/70"
+                      style={{ transformStyle: 'preserve-3d' }}
                       animate={{
+                        rotateY: [0, 360],
+                        rotateZ: [0, -360],
                         boxShadow: [
                           "0 0 0 0 rgba(59, 130, 246, 0)",
-                          "0 0 0 4px rgba(59, 130, 246, 0.1)",
+                          "0 0 0 8px rgba(59, 130, 246, 0.2)",
+                          "0 0 20px 4px rgba(59, 130, 246, 0.3)",
                           "0 0 0 0 rgba(59, 130, 246, 0)",
                         ],
                       }}
                       transition={{
-                        duration: 2,
+                        rotateY: { 
+                          duration: 10 + index * 0.5, 
+                          repeat: Infinity, 
+                          ease: "linear" 
+                        },
+                        rotateZ: { 
+                          duration: 8 + index * 0.3, 
+                          repeat: Infinity, 
+                          ease: "linear" 
+                        },
+                        boxShadow: {
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }
+                      }}
+                    />
+                    
+                    {/* Additional rotating rings */}
+                    <motion.div
+                      className="absolute inset-2 rounded-lg border border-accent/30"
+                      animate={{
+                        rotateX: [0, 360],
+                        rotateZ: [0, 180],
+                      }}
+                      transition={{
+                        duration: 6 + index * 0.4,
                         repeat: Infinity,
+                        ease: "linear",
+                        delay: index * 0.1
+                      }}
+                    />
+                    
+                    <motion.div
+                      className="absolute inset-4 rounded-lg border border-secondary/40"
+                      animate={{
+                        rotateY: [0, -360],
+                        rotateX: [0, 180],
+                      }}
+                      transition={{
+                        duration: 9 + index * 0.6,
+                        repeat: Infinity,
+                        ease: "linear",
+                        delay: index * 0.15
                       }}
                     />
                     
                     <Badge 
                       variant="secondary" 
-                      className={`${tech.color} font-semibold text-sm px-4 py-2 rounded-full shadow-lg group-hover:shadow-xl transition-all duration-300`}
+                      className={`${tech.color} font-semibold text-sm px-4 py-2 rounded-full shadow-lg group-hover:shadow-2xl transition-all duration-500 relative z-10`}
+                      style={{ transformStyle: 'preserve-3d' }}
                     >
-                      {tech.name}
+                      <motion.span
+                        animate={{
+                          rotateX: [0, 5, 0, -5, 0],
+                        }}
+                        transition={{
+                          duration: 4 + index * 0.2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: index * 0.1
+                        }}
+                      >
+                        {tech.name}
+                      </motion.span>
                     </Badge>
                   </CardContent>
                 </Card>
