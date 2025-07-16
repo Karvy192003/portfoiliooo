@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { GraduationCap, Award, Target, Heart } from 'lucide-react';
+import TechStack3D from './TechStack3D';
 
 export default function About() {
   const techStack = [
@@ -140,7 +141,7 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl backdrop-blur-sm">
                   <div className="absolute inset-4 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center">
                     <div className="w-64 h-64 lg:w-80 lg:h-80 bg-background rounded-xl flex items-center justify-center shadow-2xl">
-                      <span className="text-8xl lg:text-9xl">👩‍🎓</span>
+                      <span className="text-8xl lg:text-9xl">👩‍💻</span>
                     </div>
                   </div>
                 </div>
@@ -177,7 +178,7 @@ export default function About() {
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
             Technologies I Work With
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6">
             {techStack.map((tech, index) => (
               <motion.div
                 key={tech.name}
@@ -185,15 +186,82 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                whileHover={{ scale: 1.1, y: -5 }}
+                whileHover={{ 
+                  scale: 1.15, 
+                  y: -10,
+                  rotateY: 15,
+                  rotateX: 10,
+                  z: 50
+                }}
                 className="group"
+                style={{ transformStyle: 'preserve-3d' }}
               >
-                <Card className="card-hover border-2 hover:border-primary/30 transition-all duration-300">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                <Card className="relative card-hover border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden bg-gradient-to-br from-background via-background to-secondary/20">
+                  {/* Animated background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Floating particles */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    {[...Array(3)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute w-1 h-1 bg-primary/30 rounded-full"
+                        style={{
+                          left: `${20 + i * 30}%`,
+                          top: `${20 + i * 20}%`,
+                        }}
+                        animate={{
+                          y: [0, -10, 0],
+                          opacity: [0.3, 0.8, 0.3],
+                        }}
+                        transition={{
+                          duration: 2 + i * 0.5,
+                          repeat: Infinity,
+                          delay: i * 0.3,
+                        }}
+                      />
+                    ))}
+                  </div>
+                  
+                  <CardContent className="relative p-8 text-center">
+                    <motion.div 
+                      className="text-5xl mb-4 group-hover:scale-125 transition-transform duration-500"
+                      animate={{
+                        rotateY: [0, 360],
+                      }}
+                      transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                      whileHover={{
+                        rotateY: [0, 180],
+                        transition: { duration: 0.6 }
+                      }}
+                    >
                       {tech.icon}
-                    </div>
-                    <Badge variant="secondary" className={`${tech.color} font-medium`}>
+                    </motion.div>
+                    
+                    {/* Glowing ring */}
+                    <motion.div
+                      className="absolute inset-0 rounded-lg border-2 border-primary/0 group-hover:border-primary/50"
+                      animate={{
+                        boxShadow: [
+                          "0 0 0 0 rgba(59, 130, 246, 0)",
+                          "0 0 0 4px rgba(59, 130, 246, 0.1)",
+                          "0 0 0 0 rgba(59, 130, 246, 0)",
+                        ],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                      }}
+                    />
+                    
+                    <Badge 
+                      variant="secondary" 
+                      className={`${tech.color} font-semibold text-sm px-4 py-2 rounded-full shadow-lg group-hover:shadow-xl transition-all duration-300`}
+                    >
                       {tech.name}
                     </Badge>
                   </CardContent>

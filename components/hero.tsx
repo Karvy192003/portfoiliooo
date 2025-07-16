@@ -181,7 +181,7 @@ export default function Hero() {
               >
                 <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                   <div className="w-48 h-48 lg:w-64 lg:h-64 bg-background rounded-full flex items-center justify-center shadow-2xl">
-                    <span className="text-6xl lg:text-8xl">👨‍💻</span>
+                    <span className="text-6xl lg:text-8xl">👩‍💻</span>
                   </div>
                 </div>
               </motion.div>

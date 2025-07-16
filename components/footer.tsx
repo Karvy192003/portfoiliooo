@@ -47,11 +47,6 @@ export default function Footer() {
 
   const contactInfo = [
     {
-      icon: <Phone className="h-4 w-4" />,
-      text: '+91 7248727000',
-      href: 'tel:+917248727000'
-    },
-    {
       icon: <Mail className="h-4 w-4" />,
       text: 'karvy1902@gmail.com',
       href: 'mailto:karvy1902@gmail.com'

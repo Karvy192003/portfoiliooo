@@ -191,45 +191,95 @@ export default function Skills() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group h-full"
               >
-                <Card className="h-full card-hover border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden">
+                <Card className="h-full card-hover professional-glow border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden bg-gradient-to-br from-background via-background to-secondary/10">
                   <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
-                  <CardHeader className="text-center pb-4">
+                  <CardHeader className="relative text-center pb-4">
+                    {/* Floating particles */}
+                    <div className="absolute inset-0 overflow-hidden">
+                      {[...Array(5)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          className="absolute w-1 h-1 bg-primary/20 rounded-full"
+                          style={{
+                            left: `${10 + i * 20}%`,
+                            top: `${20 + i * 15}%`,
+                          }}
+                          animate={{
+                            y: [0, -20, 0],
+                            opacity: [0.2, 0.8, 0.2],
+                            scale: [1, 1.5, 1],
+                          }}
+                          transition={{
+                            duration: 3 + i * 0.5,
+                            repeat: Infinity,
+                            delay: i * 0.4,
+                          }}
+                        />
+                      ))}
+                    </div>
+                    
                     <motion.div
-                      className="w-16 h-16 mx-auto bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform duration-300"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
+                      className="relative w-20 h-20 mx-auto bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 rounded-3xl flex items-center justify-center text-primary mb-6 group-hover:scale-125 transition-all duration-500 shadow-lg"
+                      whileHover={{ 
+                        rotate: 360,
+                        scale: 1.3,
+                        boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)"
+                      }}
+                      transition={{ duration: 0.8, type: "spring", stiffness: 200 }}
+                      animate={{
+                        rotateY: [0, 360],
+                      }}
+                      style={{
+                        transformStyle: 'preserve-3d',
+                        animation: 'techFloat 8s ease-in-out infinite'
+                      }}
                     >
+                      {/* Inner glow */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl blur-sm group-hover:blur-md transition-all duration-500"></div>
                       {service.icon}
                     </motion.div>
+                    
                     <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                       {service.title}
                     </CardTitle>
-                    <div className="flex items-center justify-center space-x-2 mt-2">
-                      <div className="flex-1 bg-secondary rounded-full h-2 max-w-32">
+                    
+                    <div className="flex items-center justify-center space-x-3 mt-4">
+                      <div className="flex-1 bg-secondary/50 rounded-full h-3 max-w-40 overflow-hidden relative">
+                        {/* Animated background */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse"></div>
                         <motion.div
-                          className={`h-2 rounded-full bg-gradient-to-r ${service.color}`}
+                          className={`h-3 rounded-full bg-gradient-to-r ${service.color} relative overflow-hidden`}
                           initial={{ width: 0 }}
                           whileInView={{ width: `${service.rating}%` }}
                           viewport={{ once: true }}
                           transition={{ duration: 1.5, delay: index * 0.2 }}
-                        />
+                        >
+                          {/* Shimmer effect */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+                        </motion.div>
                       </div>
-                      <span className="text-sm font-semibold text-primary">{service.rating}%</span>
+                      <span className="text-lg font-bold text-primary">{service.rating}%</span>
                     </div>
                   </CardHeader>
-                  <CardContent className="text-center space-y-4">
+                  
+                  <CardContent className="relative text-center space-y-6">
                     <p className="text-muted-foreground leading-relaxed">
                       {service.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 justify-center">
+                    <div className="flex flex-wrap gap-3 justify-center">
                       {service.skills.map((skill) => (
-                        <Badge
+                        <motion.div
                           key={skill}
-                          variant="secondary"
-                          className="bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                          whileHover={{ scale: 1.1, y: -2 }}
+                          whileTap={{ scale: 0.95 }}
                         >
-                          {skill}
-                        </Badge>
+                          <Badge
+                            variant="secondary"
+                            className="bg-gradient-to-r from-primary/10 to-accent/10 text-primary hover:from-primary hover:to-accent hover:text-primary-foreground transition-all duration-300 px-3 py-1 text-sm font-medium border border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-md"
+                          >
+                            {skill}
+                          </Badge>
+                        </motion.div>
                       ))}
                     </div>
                   </CardContent>

@@ -176,39 +176,96 @@ export default function Projects() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="lg:col-span-1"
               >
-                <Card className="h-full card-hover border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden group">
+                <Card className="h-full card-hover professional-glow border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden group bg-gradient-to-br from-background via-background to-secondary/10">
                   <div className="h-2 bg-gradient-to-r from-primary to-accent"></div>
-                  <CardHeader className="relative">
-                    <div className="w-20 h-20 mx-auto bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                      {project.image}
+                  <CardHeader className="relative pb-4">
+                    {/* Floating particles */}
+                    <div className="absolute inset-0 overflow-hidden">
+                      {[...Array(4)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          className="absolute w-1 h-1 bg-primary/30 rounded-full"
+                          style={{
+                            left: `${15 + i * 25}%`,
+                            top: `${20 + i * 20}%`,
+                          }}
+                          animate={{
+                            y: [0, -15, 0],
+                            opacity: [0.3, 0.9, 0.3],
+                          }}
+                          transition={{
+                            duration: 2.5 + i * 0.3,
+                            repeat: Infinity,
+                            delay: i * 0.2,
+                          }}
+                        />
+                      ))}
                     </div>
+                    
+                    <motion.div 
+                      className="w-24 h-24 mx-auto bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 rounded-3xl flex items-center justify-center text-6xl mb-6 group-hover:scale-125 transition-all duration-500 shadow-xl"
+                      whileHover={{ 
+                        rotateY: 180,
+                        scale: 1.3,
+                        boxShadow: "0 25px 50px rgba(59, 130, 246, 0.4)"
+                      }}
+                      transition={{ duration: 0.8, type: "spring" }}
+                      animate={{
+                        rotateX: [0, 5, 0],
+                        rotateY: [0, 360],
+                      }}
+                      style={{
+                        transformStyle: 'preserve-3d',
+                        animation: 'techFloat 10s ease-in-out infinite'
+                      }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
+                      {project.image}
+                    </motion.div>
+                    
                     <Badge variant="secondary" className="absolute top-4 right-4 bg-primary/10 text-primary">
                       {project.category}
                     </Badge>
+                    
                     <CardTitle className="text-xl font-bold text-foreground text-center group-hover:text-primary transition-colors duration-300">
                       {project.title}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  
+                  <CardContent className="space-y-6">
                     <p className="text-muted-foreground text-center leading-relaxed">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 justify-center">
+                    <div className="flex flex-wrap gap-3 justify-center">
                       {project.tech.map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs border-primary/30">
-                          {tech}
-                        </Badge>
+                        <motion.div
+                          key={tech}
+                          whileHover={{ scale: 1.1, y: -2 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Badge 
+                            variant="outline" 
+                            className="text-xs border-primary/30 hover:border-primary/60 hover:bg-primary/10 transition-all duration-300 px-2 py-1"
+                          >
+                            {tech}
+                          </Badge>
+                        </motion.div>
                       ))}
                     </div>
                     <div className="flex justify-center pt-4">
-                      <Button
-                        variant="outline"
-                        className="border-primary/30 hover:bg-primary hover:text-primary-foreground px-6"
-                        onClick={() => window.open(project.github, '_blank')}
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                       >
-                        <Github className="h-4 w-4 mr-2" />
-                        Show Code
-                      </Button>
+                        <Button
+                          variant="outline"
+                          className="border-primary/30 hover:bg-primary hover:text-primary-foreground px-8 py-2 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                          onClick={() => window.open(project.github, '_blank')}
+                        >
+                          <Github className="h-4 w-4 mr-2" />
+                          Show Code
+                        </Button>
+                      </motion.div>
                     </div>
                   </CardContent>
                 </Card>

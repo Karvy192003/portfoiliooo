@@ -31,18 +31,6 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    {
-      icon: <Phone className="h-6 w-6" />,
-      title: 'Phone',
-      value: '+91 7248727000',
-      href: 'tel:+917248727000',
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      icon: <Mail className="h-6 w-6" />,
-      title: 'Email',
-      value: 'karvy1902@gmail.com',
-      href: 'mailto:karvy1902@gmail.com',
       color: 'from-blue-500 to-cyan-500'
     },
     {
