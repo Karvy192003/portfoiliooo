@@ -207,9 +207,9 @@ export default function Projects() {
                       whileHover={{ 
                         rotateY: 180,
                         scale: 1.3,
-                        boxShadow: "0 25px 50px rgba(59, 130, 246, 0.4)"
+                        boxShadow: "0 25px 50px rgba(59, 130, 246, 0.4)",
+                        transition: { duration: 0.8, type: "spring" }
                       }}
-                      transition={{ duration: 0.8, type: "spring" }}
                       animate={{
                         rotateX: [0, 5, 0],
                         rotateY: [0, 360],
