@@ -32,13 +32,6 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      icon: <Phone className="h-6 w-6" />,
-      title: 'Phone',
-      value: '+91 8700654321',
-      href: 'tel:+918700654321',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
       icon: <MapPin className="h-6 w-6" />,
       title: 'Location',
       value: 'Delhi, India',
@@ -107,7 +100,7 @@ export default function Contact() {
         </motion.div>
 
         {/* Contact Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-16 max-w-md mx-auto">
           {contactInfo.map((info, index) => (
             <motion.a
               key={info.title}
