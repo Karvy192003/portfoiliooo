@@ -112,7 +112,7 @@ export default function Hero() {
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold shadow-lg neon-glow"
-                  onClick={() => window.open('/resume.pdf', '_blank')}
+                  onClick={() => window.open('https://drive.google.com/file/d/15AwwSDjZJ6aLYSbmOG3jLq0aKcd-4kO4/view?usp=drive_link', '_blank')}
                 >
                   <Download className="mr-2 h-5 w-5" />
                   Download Resume
