@@ -107,6 +107,168 @@ export default function Projects() {
       image: '✨',
       category: 'Frontend',
       featured: false
+    },
+    {
+      title: 'Portfolio',
+      description: 'Personal portfolio website built with Next.js and React.',
+      tech: ['Next.js', 'React', 'TailwindCSS'],
+      github: 'https://github.com/Karvy192003/Portfolio',
+      image: '🌐',
+      category: 'Frontend',
+      featured: false
+    },
+    {
+      title: 'reposabcd',
+      description: 'Project reposabcd.',
+      tech: ['Python'],
+      github: 'https://github.com/Karvy192003/reposabcd',
+      image: '📦',
+      category: 'Full Stack',
+      featured: false
+    },
+    {
+      title: 'stockmultitools',
+      description: 'Project stockmultitools.',
+      tech: ['Python'],
+      github: 'https://github.com/Karvy192003/stockmultitools',
+      image: '📈',
+      category: 'Full Stack',
+      featured: false
+    },
+    {
+      title: 'dockerimgdashboard',
+      description: 'Project dockerimgdashboard.',
+      tech: ['Docker'],
+      github: 'https://github.com/Karvy192003/dockerimgdashboard',
+      image: '🐳',
+      category: 'DevOps',
+      featured: false
+    },
+    {
+      title: 'Docker_tasksmenu',
+      description: 'Project Docker_tasksmenu.',
+      tech: ['Docker'],
+      github: 'https://github.com/Karvy192003/Docker_tasksmenu',
+      image: '📝',
+      category: 'DevOps',
+      featured: false
+    },
+    {
+      title: 'aitherapist',
+      description: 'Project aitherapist.',
+      tech: ['Python', 'AI'],
+      github: 'https://github.com/Karvy192003/aitherapist',
+      image: '🧠',
+      category: 'AI/ML',
+      featured: false
+    },
+    {
+      title: 'Solitairepredict',
+      description: 'Project Solitairepredict.',
+      tech: ['Python', 'ML'],
+      github: 'https://github.com/Karvy192003/Solitairepredict',
+      image: '🃏',
+      category: 'AI/ML',
+      featured: false
+    },
+    {
+      title: 'Docker_streamlit',
+      description: 'Project Docker_streamlit.',
+      tech: ['Docker', 'Streamlit'],
+      github: 'https://github.com/Karvy192003/Docker_streamlit',
+      image: '🐳',
+      category: 'DevOps',
+      featured: false
+    },
+    {
+      title: 'Linux-streamlit',
+      description: 'Project Linux-streamlit.',
+      tech: ['Linux', 'Streamlit'],
+      github: 'https://github.com/Karvy192003/Linux-streamlit',
+      image: '🐧',
+      category: 'DevOps',
+      featured: false
+    },
+    {
+      title: 'Pythonmenu',
+      description: 'Project Pythonmenu.',
+      tech: ['Python'],
+      github: 'https://github.com/Karvy192003/Pythonmenu',
+      image: '🐍',
+      category: 'Full Stack',
+      featured: false
+    },
+    {
+      title: 'Langproject',
+      description: 'Project Langproject.',
+      tech: ['Python', 'LangChain'],
+      github: 'https://github.com/Karvy192003/Langproject',
+      image: '🌐',
+      category: 'AI/ML',
+      featured: false
+    },
+    {
+      title: 'Beautifulsoup',
+      description: 'Project Beautifulsoup.',
+      tech: ['Python', 'BeautifulSoup'],
+      github: 'https://github.com/Karvy192003/Beautifulsoup',
+      image: '📚',
+      category: 'AI/ML',
+      featured: false
+    },
+    {
+      title: 'awscontainer',
+      description: 'Project awscontainer.',
+      tech: ['AWS', 'Docker'],
+      github: 'https://github.com/Karvy192003/awscontainer',
+      image: '☁️',
+      category: 'DevOps',
+      featured: false
+    },
+    {
+      title: 'Textsync',
+      description: 'Project Textsync.',
+      tech: ['JavaScript', 'HTML', 'CSS'],
+      github: 'https://github.com/Karvy192003/Textsync',
+      image: '🔤',
+      category: 'Frontend',
+      featured: false
+    },
+    {
+      title: 'Kubernetes_menu',
+      description: 'Project Kubernetes_menu.',
+      tech: ['Kubernetes'],
+      github: 'https://github.com/Karvy192003/Kubernetes_menu',
+      image: '☸️',
+      category: 'DevOps',
+      featured: false
+    },
+    {
+      title: 'agents',
+      description: 'Project agents.',
+      tech: ['Python', 'AI'],
+      github: 'https://github.com/Karvy192003/agents',
+      image: '🤖',
+      category: 'AI/ML',
+      featured: false
+    },
+    {
+      title: 'JSonclick',
+      description: 'Project JSonclick.',
+      tech: ['JavaScript'],
+      github: 'https://github.com/Karvy192003/JSonclick',
+      image: '🖱️',
+      category: 'Frontend',
+      featured: false
+    },
+    {
+      title: 'Sentence_polarity',
+      description: 'Project Sentence_polarity.',
+      tech: ['Python', 'NLP'],
+      github: 'https://github.com/Karvy192003/Sentence_polarity',
+      image: '💬',
+      category: 'AI/ML',
+      featured: false
     }
   ];
 

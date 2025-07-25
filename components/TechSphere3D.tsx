@@ -7,49 +7,38 @@ import { Group, Vector3, Color } from 'three';
 import { motion } from 'framer-motion';
 
 const techs = [
-  { name: 'Python', color: '#3776AB', icon: '🐍', position: [0, 2, 0] },
-  { name: 'Java', color: '#ED8B00', icon: '☕', position: [2, 1, 1] },
-  { name: 'Docker', color: '#2496ED', icon: '🐳', position: [-2, 1, 1] },
-  { name: 'Jenkins', color: '#D33833', icon: '🔧', position: [1, -1, 2] },
-  { name: 'Kubernetes', color: '#326CE5', icon: '⚙️', position: [-1, -1, 2] },
-  { name: 'AI/ML', color: '#FF6B00', icon: '🤖', position: [0, 0, -2] },
-  { name: 'React', color: '#61DAFB', icon: '⚛️', position: [2, -2, 0] },
-  { name: 'Git', color: '#F05032', icon: '📚', position: [-2, -2, 0] },
-  { name: 'Ansible', color: '#EE0000', icon: '🔄', position: [0, 2.5, 1] },
-  { name: 'AWS Cloud', color: '#FF9900', icon: '☁️', position: [1.5, 0, -2.5] },
+  { name: 'Python', color: '#3776AB', icon: '🐍' },
+  { name: 'Java', color: '#ED8B00', icon: '☕' },
+  { name: 'Docker', color: '#2496ED', icon: '🐳' },
+  { name: 'Jenkins', color: '#D33833', icon: '🔧' },
+  { name: 'Kubernetes', color: '#326CE5', icon: '⚙️' },
+  { name: 'AI/ML', color: '#FF6B00', icon: '🤖' },
+  { name: 'React', color: '#61DAFB', icon: '⚛️' },
+  { name: 'Git', color: '#F05032', icon: '📚' },
+  { name: 'Ansible', color: '#EE0000', icon: '🔄' },
+  { name: 'AWS Cloud', color: '#FF9900', icon: '☁️' },
 ];
 
-type Tech = { name: string; color: string; icon: string; position: [number, number, number] };
+type Tech = { name: string; color: string; icon: string };
 
 type TechNodeProps = {
   tech: Tech;
   index: number;
+  position: [number, number, number];
   onClick: () => void;
   isSelected: boolean;
 };
 
-function TechNode({ tech, index, onClick, isSelected }: TechNodeProps) {
+function TechNode({ tech, index, position, onClick, isSelected }: TechNodeProps) {
   const meshRef = useRef<any>();
   const [hovered, setHovered] = useState(false);
 
   useFrame((state) => {
-    if (meshRef.current) {
-      // Continuous gentle rotation
-      meshRef.current.rotation.y += 0.008;
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5 + index) * 0.1;
-      
-      // Floating animation
-      const baseY = tech.position[1];
-      meshRef.current.position.y = baseY + Math.sin(state.clock.elapsedTime * 0.8 + index) * 0.3;
-      
-      // Scale animation on hover/select
-      const targetScale = hovered || isSelected ? 1.6 : 1.2;
-      meshRef.current.scale.lerp(new Vector3(targetScale, targetScale, targetScale), 0.1);
-    }
+    // No animation, no scaling, no rotation: icons are static and plain
   });
 
   return (
-    <group position={tech.position}>
+    <group position={position}>
       {/* Main glowing sphere */}
       <Sphere
         ref={meshRef}
@@ -68,7 +57,6 @@ function TechNode({ tech, index, onClick, isSelected }: TechNodeProps) {
           metalness={0.8}
         />
       </Sphere>
-      
       {/* Outer glow ring */}
       <Sphere args={[0.5, 16, 16]}>
         <meshBasicMaterial 
@@ -78,7 +66,6 @@ function TechNode({ tech, index, onClick, isSelected }: TechNodeProps) {
           wireframe
         />
       </Sphere>
-      
       {/* Tech icon and name */}
       <Html center style={{ pointerEvents: 'none' }}>
         <div style={{
@@ -109,27 +96,6 @@ function TechNode({ tech, index, onClick, isSelected }: TechNodeProps) {
           </div>
         </div>
       </Html>
-      
-      {/* Orbiting particles */}
-      {[...Array(4)].map((_, i) => (
-        <Box
-          key={i}
-          args={[0.03, 0.03, 0.03]}
-          position={[
-            Math.cos(i * 1.5 + index) * 0.8,
-            Math.sin(i * 1.5 + index) * 0.8,
-            Math.sin(i + index) * 0.8
-          ]}
-        >
-          <meshBasicMaterial 
-            color={tech.color} 
-            transparent 
-            opacity={0.7}
-            emissive={tech.color}
-            emissiveIntensity={0.3}
-          />
-        </Box>
-      ))}
     </group>
   );
 }
@@ -201,8 +167,6 @@ function FloatingParticles() {
             color={techs[i % techs.length].color} 
             transparent 
             opacity={0.15} 
-            emissive={techs[i % techs.length].color}
-            emissiveIntensity={0.1}
           />
         </Box>
       ))}
@@ -280,6 +244,7 @@ export default function TechSphere3D() {
               key={tech.name}
               tech={tech}
               index={i}
+              position={[i * 2.2 - (techs.length - 1), 0, 0]}
               onClick={() => setSelectedTech(selectedTech?.name === tech.name ? null : tech)}
               isSelected={selectedTech?.name === tech.name}
             />
