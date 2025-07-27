@@ -40,7 +40,7 @@ export default function Navbar() {
   ];
 
   const contactInfo = [
-    { icon: <Mail className="h-4 w-4" />, text: 'karvy1902@gmail..com', href: 'mailto:karvy1902@gmail..com' },
+    { icon: <Mail className="h-4 w-4" />, text: 'karvy1902@gmail..com', href: 'mailto:karvy1902@gmail..com?subject=Portfolio%20Inquiry&body=Hi%20Karvy%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards%2C' },
     { icon: <MapPin className="h-4 w-4" />, text: 'Delhi, India', href: '#' },
   ];
 
