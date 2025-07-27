@@ -10,40 +10,13 @@ import { useState } from 'react';
 export default function Projects() {
   const projects = [
     {
-      title: 'CI/CD Pipeline Automation',
-      description: 'Complete DevOps pipeline automating code commits to container deployment with Git, Jenkins, and Docker.',
-      tech: ['Git', 'GitHub', 'Jenkins', 'Docker', 'Linux'],
-      github: 'https://github.com/Karvy192003/cicd-pipeline',
-      image: '🔄',
-      category: 'DevOps',
-      featured: true
-    },
-    {
-      title: 'Docker Management UI',
-      description: 'Streamlit-based interface for managing Docker operations with easy-to-use web UI for container management.',
-      tech: ['Python', 'Streamlit', 'Docker', 'Subprocess'],
-      github: 'https://github.com/Karvy192003/Docker_streamlit.git',
-      image: '🐳',
-      category: 'DevOps',
-      featured: true
-    },
-    {
-      title: 'PropGuard AI - Rental Scam Detector',
-      description: 'GenAI-powered Streamlit app using Gemini and LangChain to detect rental scams and validate property listings.',
-      tech: ['Python', 'Streamlit', 'Gemini', 'LangChain', 'Plotly'],
-      github: 'https://github.com/Karvy192003/Langproject.git',
-      image: '🏠',
-      category: 'AI/ML',
-      featured: true
-    },
-    {
       title: 'MindBloom - AI Therapy Assistant',
       description: 'AI-powered emotional support companion using Flask, SQLite, and Gemini API for therapeutic conversations.',
       tech: ['Python', 'Flask', 'Gemini API', 'SQLite', 'Bootstrap'],
       github: 'https://github.com/Karvy192003/aitherapist.git',
       image: '🌿',
       category: 'AI/ML',
-      featured: false
+      featured: true
     },
     {
       title: 'NeoToolkit - Smart Productivity Suite',
@@ -52,7 +25,7 @@ export default function Projects() {
       github: 'https://github.com/Karvy192003/Pythonmenu.git',
       image: '🚀',
       category: 'Full Stack',
-      featured: false
+      featured: true
     },
     {
       title: 'Solitaire Predictor',
@@ -61,7 +34,7 @@ export default function Projects() {
       github: 'https://github.com/Karvy192003/Solitairepredict.git',
       image: '🃏',
       category: 'AI/ML',
-      featured: false
+      featured: true
     },
     {
       title: 'Linux Management UI',
@@ -79,7 +52,7 @@ export default function Projects() {
       github: 'https://github.com/Karvy192003/Beautifulsoup.git',
       image: '📚',
       category: 'AI/ML',
-      featured: false
+      featured: true
     },
     {
       title: 'Mobile JS Functionality',
@@ -88,7 +61,7 @@ export default function Projects() {
       github: 'https://github.com/Karvy192003/JSonclick.git',
       image: '📱',
       category: 'Frontend',
-      featured: false
+      featured: true
     },
     {
       title: 'AWS Automation Container Launch',
@@ -108,167 +81,64 @@ export default function Projects() {
       category: 'Frontend',
       featured: false
     },
+
     {
-      title: 'Portfolio',
-      description: 'Personal portfolio website built with Next.js and React.',
-      tech: ['Next.js', 'React', 'TailwindCSS'],
-      github: 'https://github.com/Karvy192003/Portfolio',
-      image: '🌐',
-      category: 'Frontend',
-      featured: false
-    },
-    {
-      title: 'reposabcd',
-      description: 'Project reposabcd.',
-      tech: ['Python'],
-      github: 'https://github.com/Karvy192003/reposabcd',
-      image: '📦',
-      category: 'Full Stack',
-      featured: false
-    },
-    {
-      title: 'stockmultitools',
-      description: 'Project stockmultitools.',
-      tech: ['Python'],
+      title: 'IntelliTrader Pro',
+      description: 'Professional trading platform with real-time stock insights, live market news, AI-generated reports, and smart investment analysis. Built with Streamlit and Gemini 1.5 Flash.',
+      tech: ['Python', 'Streamlit', 'Gemini', 'Web Scraping'],
       github: 'https://github.com/Karvy192003/stockmultitools',
       image: '📈',
       category: 'Full Stack',
-      featured: false
+      featured: true
     },
     {
-      title: 'dockerimgdashboard',
-      description: 'Project dockerimgdashboard.',
-      tech: ['Docker'],
+      title: 'Multi_technique Devops AI engineer',
+      description: 'Professional Streamlit app leveraging LLM prompting to generate optimized Dockerfiles for any application. Compare different prompt engineering styles for better containerized deployments.',
+      tech: ['Docker', 'Python', 'Streamlit', 'LLM'],
       github: 'https://github.com/Karvy192003/dockerimgdashboard',
       image: '🐳',
       category: 'DevOps',
-      featured: false
+      featured: true
     },
+
     {
-      title: 'Docker_tasksmenu',
-      description: 'Project Docker_tasksmenu.',
-      tech: ['Docker'],
-      github: 'https://github.com/Karvy192003/Docker_tasksmenu',
-      image: '📝',
-      category: 'DevOps',
-      featured: false
-    },
-    {
-      title: 'aitherapist',
-      description: 'Project aitherapist.',
-      tech: ['Python', 'AI'],
-      github: 'https://github.com/Karvy192003/aitherapist',
-      image: '🧠',
-      category: 'AI/ML',
-      featured: false
-    },
-    {
-      title: 'Solitairepredict',
-      description: 'Project Solitairepredict.',
-      tech: ['Python', 'ML'],
-      github: 'https://github.com/Karvy192003/Solitairepredict',
-      image: '🃏',
-      category: 'AI/ML',
-      featured: false
-    },
-    {
-      title: 'Docker_streamlit',
-      description: 'Project Docker_streamlit.',
-      tech: ['Docker', 'Streamlit'],
+      title: 'Docker Management UI',
+      description: 'Streamlit-based interface for managing Docker operations. List containers, pull images, create volumes/networks, and perform system cleanups through an easy-to-use web UI.',
+      tech: ['Docker', 'Python', 'Streamlit'],
       github: 'https://github.com/Karvy192003/Docker_streamlit',
       image: '🐳',
       category: 'DevOps',
-      featured: false
+      featured: true
     },
+
     {
-      title: 'Linux-streamlit',
-      description: 'Project Linux-streamlit.',
-      tech: ['Linux', 'Streamlit'],
-      github: 'https://github.com/Karvy192003/Linux-streamlit',
-      image: '🐧',
-      category: 'DevOps',
-      featured: false
-    },
-    {
-      title: 'Pythonmenu',
-      description: 'Project Pythonmenu.',
-      tech: ['Python'],
-      github: 'https://github.com/Karvy192003/Pythonmenu',
-      image: '🐍',
-      category: 'Full Stack',
-      featured: false
-    },
-    {
-      title: 'Langproject',
-      description: 'Project Langproject.',
-      tech: ['Python', 'LangChain'],
+      title: 'Prop Gaurd AI',
+      description: 'Smart Streamlit app using Gemini and LangChain to detect rental scams, validate prices, and show real-time map views. Instantly flags scam probability and compares rent vs market.',
+      tech: ['Python', 'Streamlit', 'Gemini', 'LangChain', 'Plotly'],
       github: 'https://github.com/Karvy192003/Langproject',
       image: '🌐',
       category: 'AI/ML',
-      featured: false
+      featured: true
     },
+
     {
-      title: 'Beautifulsoup',
-      description: 'Project Beautifulsoup.',
-      tech: ['Python', 'BeautifulSoup'],
-      github: 'https://github.com/Karvy192003/Beautifulsoup',
-      image: '📚',
-      category: 'AI/ML',
-      featured: false
-    },
-    {
-      title: 'awscontainer',
-      description: 'Project awscontainer.',
-      tech: ['AWS', 'Docker'],
-      github: 'https://github.com/Karvy192003/awscontainer',
-      image: '☁️',
-      category: 'DevOps',
-      featured: false
-    },
-    {
-      title: 'Textsync',
-      description: 'Project Textsync.',
-      tech: ['JavaScript', 'HTML', 'CSS'],
-      github: 'https://github.com/Karvy192003/Textsync',
-      image: '🔤',
-      category: 'Frontend',
-      featured: false
-    },
-    {
-      title: 'Kubernetes_menu',
-      description: 'Project Kubernetes_menu.',
-      tech: ['Kubernetes'],
+      title: 'KubeFlow',
+      description: 'Powerful Kubernetes Management Dashboard built with Python and Streamlit. Simplifies Kubernetes operations with an interactive interface that eliminates complex CLI commands.',
+      tech: ['Kubernetes', 'Python', 'Streamlit'],
       github: 'https://github.com/Karvy192003/Kubernetes_menu',
       image: '☸️',
       category: 'DevOps',
-      featured: false
+      featured: true
     },
+
     {
-      title: 'agents',
-      description: 'Project agents.',
-      tech: ['Python', 'AI'],
-      github: 'https://github.com/Karvy192003/agents',
-      image: '🤖',
-      category: 'AI/ML',
-      featured: false
-    },
-    {
-      title: 'JSonclick',
-      description: 'Project JSonclick.',
-      tech: ['JavaScript'],
-      github: 'https://github.com/Karvy192003/JSonclick',
-      image: '🖱️',
-      category: 'Frontend',
-      featured: false
-    },
-    {
-      title: 'Sentence_polarity',
-      description: 'Project Sentence_polarity.',
-      tech: ['Python', 'NLP'],
+      title: 'Sentiment analyzer',
+      description: 'Real-time sentiment analyzer using TextBlob and Gradio. Detects polarity and subjectivity of any sentence with instant feedback on positive/negative or subjective/objective content.',
+      tech: ['Python', 'TextBlob', 'Gradio', 'NLP'],
       github: 'https://github.com/Karvy192003/Sentence_polarity',
       image: '💬',
       category: 'AI/ML',
-      featured: false
+      featured: true
     }
   ];
 
@@ -328,8 +198,8 @@ export default function Projects() {
             <Star className="h-6 w-6 text-primary mr-2" />
             Featured Projects
           </motion.h3>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {featuredProjects.map((project, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -436,72 +306,7 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Other Projects */}
-        <div>
-          <motion.h3
-            className="text-2xl font-bold text-foreground mb-8 flex items-center"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <GitBranch className="h-6 w-6 text-primary mr-2" />
-            More Projects
-          </motion.h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {otherProjects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Card className="h-full card-hover border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden group">
-                  <CardHeader className="pb-3">
-                    <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl flex items-center justify-center text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
-                      {project.image}
-                    </div>
-                    <Badge variant="secondary" className="w-fit mx-auto bg-primary/10 text-primary text-xs">
-                      {project.category}
-                    </Badge>
-                    <CardTitle className="text-lg font-bold text-foreground text-center group-hover:text-primary transition-colors duration-300">
-                      {project.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <p className="text-sm text-muted-foreground text-center leading-relaxed">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-1 justify-center">
-                      {project.tech.slice(0, 3).map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs border-primary/30">
-                          {tech}
-                        </Badge>
-                      ))}
-                      {project.tech.length > 3 && (
-                        <Badge variant="outline" className="text-xs border-primary/30">
-                          +{project.tech.length - 3}
-                        </Badge>
-                      )}
-                    </div>
-                    <div className="flex justify-center pt-2">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="text-xs border-primary/30 hover:bg-primary hover:text-primary-foreground px-4"
-                        onClick={() => window.open(project.github, '_blank')}
-                      >
-                        <Github className="h-3 w-3 mr-1" />
-                        Show Code
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+
 
         {/* Call to action */}
         <motion.div

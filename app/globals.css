@@ -374,3 +374,49 @@ html {
   60% { content: '..'; }
   80%, 100% { content: '...'; }
 }
+
+/* 3D Flip Card Styles */
+.skill-flip-card {
+  perspective: 1000px;
+  width: 100%;
+  height: 140px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  transform-origin: center;
+}
+
+.skill-flip-card:hover .skill-flip-card-inner {
+  transform: rotateY(180deg) !important;
+}
+
+.skill-flip-card-front, .skill-flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.skill-flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Ensure proper 3D rendering */
+.skill-flip-card * {
+  transform-style: preserve-3d;
+}
+
