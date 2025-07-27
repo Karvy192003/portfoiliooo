@@ -44,7 +44,7 @@ export default function Contact() {
     {
       name: 'Email',
       icon: <Mail className="h-6 w-6" />,
-      href: 'mailto:karvy1902@gmail.com',
+      href: 'mailto:karvy1902@gmail..com',
       color: 'hover:text-blue-500',
       bg: 'hover:bg-blue-500/10'
     },
