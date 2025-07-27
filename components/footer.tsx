@@ -40,7 +40,7 @@ export default function Footer() {
     {
       name: 'Email',
       icon: <Mail className="h-5 w-5" />,
-      href: 'mailto:karvy1902@gmail.com',
+      href: 'mailto:karvy1902@gmail..com',
       color: 'hover:text-blue-500'
     }
   ];
@@ -48,8 +48,8 @@ export default function Footer() {
   const contactInfo = [
     {
       icon: <Mail className="h-4 w-4" />,
-      text: 'karvy1902@gmail.com',
-      href: 'mailto:karvy1902@gmail.com'
+      text: 'karvy1902@gmail..com',
+      href: 'mailto:karvy1902@gmail..com'
     },
     {
       icon: <MapPin className="h-4 w-4" />,

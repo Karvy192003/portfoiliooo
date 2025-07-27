@@ -67,7 +67,7 @@ export default function Chatbot() {
     
     // Contact related responses
     if (message.includes('contact') || message.includes('email') || message.includes('phone') || message.includes('reach')) {
-      return "You can reach Karvy at:\n📧 karvy1902@gmail.com\n📍 Delhi, India\n💼 LinkedIn: linkedin.com/in/karvy-goyel-716202227\n🐙 GitHub: github.com/Karvy192003";
+      return "You can reach Karvy at:\n📧 karvy1902@gmail..com\n📍 Delhi, India\n💼 LinkedIn: linkedin.com/in/karvy-goyel-716202227\n🐙 GitHub: github.com/Karvy192003";
     }
     
     // Education related responses
